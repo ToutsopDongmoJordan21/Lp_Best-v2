@@ -1,0 +1,24 @@
+<div class="mainDivision">
+    <div class="containerHold">
+        <div class="publicityPanel">
+            Publicity
+        </div>
+    
+        <div class="mainContent">
+            <h1>Popular Categories</h1>
+            <div class="categoryLogo">
+                <div class="name" (click)= "onCLick('beginner')" >Beginner Series</div>
+                <div class="name" (click)= "onCLick('office')" >Office Series</div>
+                <div class="name" (click)= "onCLick('education')">Education Setting</div>
+                <div class="name" (click)= "onCLick('content')" >Content Creator</div>
+                <div class="name" (click)= "onCLick('programming')" >Programing</div>
+                <div class="name" (click)= "onCLick('gamming')" >Gaming Series</div>
+            </div>
+            <!-- <h2>Latest</h2> -->
+            <!-- This part uses switches to navigate throught the various categories -->
+            <div class="bottomPanel">
+                <ng-container *ngComponentOutlet = "componentSwitcher"></ng-container>
+            </div>
+        </div>
+    </div>
+</div>

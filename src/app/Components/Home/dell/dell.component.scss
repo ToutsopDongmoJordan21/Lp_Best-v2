@@ -1,0 +1,226 @@
+@media screen and (min-width: 1025px){
+    // Globale Variables
+    $backgroundColor: #444;
+    $border: 1px solid blue;
+    $font-weight: Bold;
+    $font-family: Sacramento;
+
+    // Sass
+    @mixin display($align-item: center, $justify-content: center, $direction: row, $width: 100%, $height: 100vh) {
+        display: flex;
+        flex-direction: $direction;
+        align-items: $align-item;
+        justify-content: $justify-content;
+
+        width: $width;
+        height: $height;
+    }
+
+    // Start.
+    /*---------------------------------------------------------------------------------------------*/
+    /*
+    * This portion contains both a Publicity panel and a MainContent panel 
+    * Both of them found within a MainDivision
+    */  
+
+    .mainDivision {
+        @include display($justify-content: start, $width: 80vw, $height: 82vh, $direction: column);
+        // border: 1px solid rgb(38, 177, 96);
+
+        // This container hold was included to ease the management of the scroll effect
+        .containerHold {
+            @include display($width: 80vw, $height: 190vh, $direction: column);
+            // border: 1px solid blue;
+
+            .publicityPanel {
+                @include display($width: 80vw, $height: 23vh, $direction: column);
+                background-color:  rgb(40, 141, 187);
+            }
+
+            .bottomPanel {
+                @include display($width: 80vw, $height: 88vh, $direction: row);
+                // background-color: #ccc;
+                // border: 1px solid blue;
+        
+                .L1 {
+                    @include display($width: 80vw, $height: 45vh);
+                    margin-bottom: 1%;
+                    margin-top: -20%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: stretch;  
+                    box-sizing: border-box;
+        
+                    .cards {
+                        @include display($justify-content: space-around, $direction: column, $width: 19.4vw, $height: 40vh);
+                        background-color: #fff;
+                        margin: 0.5%;
+                        margin-left: 05%;
+                        margin-top: 03%;
+                        border-radius: 1.5%;
+                        padding: 3%;
+                        align-content: space-between;
+                        // border: 1px solid blue;
+        
+                        .imgContainer {
+                            @include display($width: 150px, $height: 150px);
+                            // padding: 1%;
+                            // border: 1px solid black;
+        
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                            }
+                        }
+        
+                        .detailsContainer {
+                            @include display($justify-content: start, $direction: column, $width: 19vw, $height: 15vh);
+                            // border: 1px solid black;
+                            padding: 3%;
+        
+                            .P1 {
+                                @include display($justify-content: start, $width: 90%, $height: 5vh);
+                                // border: 1px solid blue;
+                                font-weight: 12px;
+                            }
+        
+                            .P2 {
+                                @include display($justify-content: start, $width: 90%, $height: 5vh);
+                                // border: 1px solid maroon;
+                                font-weight: 0.5em;
+                            }
+        
+                            .buy {
+                                @include display($align-item: center, $justify-content: space-between, $width: 90%, $height: 5vh);
+                                // border: 3px solid blue;
+        
+                                .p3 {
+                                    @include display($justify-content: start, $width: 70%, $height: 5vh);
+                                    border: 3px solid blue;
+                                    font-weight: 1em;
+                                }
+        
+                                button {
+                                    // @include display($justify-content: start, $width: 50%, $height: 5vh);
+                                    // border: 3px solid red;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 30%;
+                                    height: 5vh;
+                                    border: none ;
+                                    color: #fff;
+                                    font-size: 0.7em;
+                                    background-color: #444;
+                                    margin-left: 0.5vw;
+                                    // height: 6.3vh;
+                
+                                    .material-icons {
+                                        font-size: 2em;
+                                        margin: 0 0.5vw;
+                                    }
+                                }
+        
+                                button:hover {
+                                    background-color: rgb(40, 141, 187);
+                                    color: #fff;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+        
+                .L2 {
+                    @include display($width: 80vw, $height: 45vh);
+                    .cards {
+                        @include display($justify-content: space-around, $direction: column, $width: 19.4vw, $height: 40vh);
+                        background-color: #fff;
+                        margin: 0.5%;
+                        border-radius: 1.5%;
+                        padding: 3%;
+                        // border: 1px solid blue;
+        
+                        .imgContainer {
+                            @include display($width: 150px, $height: 150px);
+                            // border: 1px solid black;
+        
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                            }
+                        }
+        
+                        .detailsContainer {
+                            @include display($justify-content: start, $direction: column, $width: 19vw, $height: 15vh);
+                            // border: 1px solid black;
+                            padding: 3%;
+        
+                            .P1 {
+                                @include display($justify-content: start, $width: 90%, $height: 5vh);
+                                // border: 1px solid blue;
+                                font-weight: 12px;
+                            }
+        
+                            .P2 {
+                                @include display($justify-content: start, $width: 90%, $height: 5vh);
+                                // border: 1px solid maroon;
+                                font-weight: 0.5em;
+                            }
+        
+                            .buy {
+                                @include display($align-item: center, $justify-content: space-between, $width: 90%, $height: 5vh);
+                                // border: 3px solid blue;
+        
+                                .p3 {
+                                    @include display($justify-content: start, $width: 70%, $height: 5vh);
+                                    border: 3px solid blue;
+                                    font-weight: 1em;
+                                }
+        
+                                button {
+                                    // @include display($justify-content: start, $width: 50%, $height: 5vh);
+                                    // border: 3px solid red;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 30%;
+                                    height: 5vh;
+                                    border: none ;
+                                    color: #fff;
+                                    font-size: 0.7em;
+                                    background-color: #444;
+                                    margin-left: 0.5vw;
+                                    // height: 6.3vh;
+                
+                                    .material-icons {
+                                        font-size: 2em;
+                                        margin: 0 0.5vw;
+                                    }
+                                }
+        
+                                button:hover {
+                                    background-color: rgb(40, 141, 187);
+                                    color: #fff;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+@media screen and (min-width: 769px) and (max-width: 1024px){
+}
+@media screen and (min-width: 481px) and (max-width: 768px){
+}
+@media screen and (min-width: 321px) and (max-width: 480px) { 
+}
+@media only screen and (min-width: 0px) and (max-width: 320px){
+}

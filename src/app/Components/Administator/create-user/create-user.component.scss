@@ -1,0 +1,103 @@
+@media screen and (min-width: 1025px){
+    // Globale Variables
+    $backgroundColor: #444;
+    $border: 1px solid blue;
+    $font-size: 0.7em;
+    $font-weight: Bold;
+    $font-family: Sacramento;
+
+    // Sass
+    @mixin display($align-item: center, $justify-content: center, $direction: column, $width: 60vw, $height: 100vh) {
+        display: flex;
+        flex-direction: $direction;
+        align-items: $align-item;
+        justify-content: $justify-content;
+
+        width: $width;
+        height: $height;
+    }
+
+    // Middle Section
+    /*------------------------------------------------------------------------------------------------------------*/
+    /*
+    *The middle section is devided into two main parts. 
+    *-The heading section containing two distinct seperations. 
+    *    -To the left, the name of the current panel we are in.
+    *    -To the right a search bar
+    *-A large drag and drop box necesarry to upload excel files to the DB
+    */
+
+    .creatUser{
+        @include display($justify-content: start);
+        // border: $border;
+        background-color: #ddd;
+
+        // Above the Table having filters and current Name
+        // Fist main section.
+        .heading {
+            @include display($justify-content: space-between, $direction: row, $width: 90%, $height: 10vh);
+            margin-bottom: 5vh;
+            // border: 1px solid red;
+
+            // Commented Just in case it might be needed in some distant future.
+            .name {
+                font-size: 1.5em;
+                color: rgb(29, 29, 59);
+            }
+            .filter {
+                @include display($direction: row, $width: 30%, $height: 10vh);
+
+                .btn-edit1 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 8vw;
+                    border: none ;
+                    background-color: #fff;
+                    color: #444;
+                    font-size: 0.7em;
+
+                    margin-left: 0.5vw;
+                    height: 6.3vh;
+
+                    .material-icons {
+                        font-size: 2em;
+                        margin: 0 0.5vw;
+                    }
+                }
+
+                .btn-edit2 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 8vw;
+                    border: none ;
+                    font-size: 0.7em;
+                    background-color: rgb(40, 141, 187);
+
+                    margin-left: 0.5vw;
+                    height: 6.3vh;
+
+                    .material-icons {
+                        margin: 0 0.5vw;
+                    }
+                }
+            }
+        }
+
+        // Main Container
+        .box{
+            @include display($width: 55vw, $height: 75vh);
+            background-color: #fff;
+            // border: $border;
+        }
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px){
+}
+@media screen and (min-width: 481px) and (max-width: 768px){
+}
+@media screen and (min-width: 321px) and (max-width: 480px) { 
+}
+@media only screen and (min-width: 0px) and (max-width: 320px){
+}

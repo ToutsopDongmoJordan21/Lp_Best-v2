@@ -1,0 +1,119 @@
+$font-stack: Century-Gosin;
+$border: 1px solid black;
+$backgroundColor : #fff;
+
+// ---------------------------------------------------------------------------------------------
+main {
+  background-color: $backgroundColor;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.img_container{
+  width: 50%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+// ---------------------------------------------------------------------------------------------
+/* This Div is for the general container within wich the login page elements will be contained */
+div {
+    background-color: #fff;
+    width: 70vh;
+    height: 75vh;
+
+    border-radius: 1%;
+    // border: 2px solid black;
+}
+/*---------------------------------------------------------------------------------------------*/
+/* Logo of LichtDN */
+.logo_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 10vh;
+    // border: $border;
+    // border: 2px solid black;
+}
+.logo_container > img {
+    width: 100%;
+    height: 10vh;
+    object-fit: contain;
+}
+/* ---------------------------------------------------- */
+/* Email */
+.email_pass_container{
+    width: 100%;
+    height: 65vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* border: 2px solid yellow; */
+    background-color: #ddd;
+}
+.email_container{
+    width: 70%;
+    height: 10vh;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 6vh;
+    background-color: #ddd;
+
+    .mat-form-field {
+      background-color: #ddd;
+    }
+}
+// ---------------------------------------------
+.password_container{
+    width: 70% !important;
+    height: 10vh;
+
+    margin-bottom: 6vh;
+    background-color: #ddd;
+    /* border: 2px solid red; */
+
+    .mat-form-field {
+      width: 100%;
+    }
+} 
+/* -------------------------------------------------------------------------------- */
+/* Button */
+.button_container{
+    width: 70%;
+    height: 10vh;
+
+    /* border: 2px solid black; */
+    background-color: #ddd;
+}
+
+.button_container {
+  a {
+    button {
+      // background-color: rgb(40, 141, 187);
+      background-color: #444;
+      color: #fff;
+      width: 100%;
+      height: 9.5vh;
+    }
+
+    button:hover{
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+/*---------------------------------------------------------------------------------------------*/

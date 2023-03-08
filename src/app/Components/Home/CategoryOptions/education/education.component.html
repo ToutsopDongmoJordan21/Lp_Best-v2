@@ -1,0 +1,23 @@
+<div class="mainContainer">
+    <!-- The cards are represented in two columns. L1 and L2 -->
+    <div class="row d-flex align-items-center L1">
+        <div class="col-md-12">
+            <div class="cards col-md-3" *ngFor="let machin of machine">
+                        <!-- Img of the Machine -->
+                        <div class="imgContainer">
+                            <img [src]="machin.pictureUrl" alt="Machine Picture">
+                        </div>
+                
+                        <!-- Details of each machine -->
+                        <div class="detailsContainer">
+                            <p class="P1">{{machin.modelSeries}}</p>
+                            <p class="P2">{{machin.productBrand}}</p>
+                            <div class="buy">
+                                <div class="P3">FCFA {{machin.machinePrice}}</div>
+                                <button type="button" class="btn btn-primary btn-edit1" (click)= "onBuy(machin.id!)" > Buy </button>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>

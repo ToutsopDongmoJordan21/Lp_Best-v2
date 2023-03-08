@@ -1,0 +1,16 @@
+<div class="creatUser">
+    <!-- Top Heading of the page -->
+    <div class="heading">
+        <!-- Name of Current Panel -->
+        <div class="name"> Employees </div>
+        <!-- Search bar to the right -->
+        <div class="filter">
+            <button type="button" class="btn btn-primary btn-edit1" (click)= "onCLick('AddNew')" > <span class="material-icons"> add_circle_outline </span> Add New </button>
+            <button type="button" class="btn btn-primary btn-edit2" (click)= "onCLick('List')"> <span class="material-icons"> list </span> List <span class="material-icons"> expand_more </span> </button>
+        </div>
+    </div>
+
+    <div class="box">
+        <ng-container *ngComponentOutlet = "componentSwitcher"></ng-container>
+    </div>
+</div>

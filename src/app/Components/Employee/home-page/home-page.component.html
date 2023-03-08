@@ -1,0 +1,95 @@
+<!-- Dashboard Admin -->
+<div class="mainContainer">
+    <!-- Panel on the left side containing dashboard options and parameters -->
+    <div class="leftPanel">
+        <!-- logo -->
+        <div class="logo">
+            <img [src] = "lichtDN" alt="logo">
+        </div>
+        <!-- list -->
+        <div class="list" (click)= "onCLick('Dashboard')">
+            <span class="material-icons"> dashboard </span>
+            <span class="list-name"> Dashboard </span>
+            <span class="space"></span>
+        </div>
+        <div class="list" (click)= "onCLick('Activity')">
+            <span class="material-icons"> local_activity </span>
+            <span class="list-name"> Activity </span>
+            <!-- <span class="space"></span> -->
+        </div>
+        <!-- <div class="list" (click)= "onCLick('CreateUsers')">
+            <span class="material-icons"> people </span>
+            <span class="list-name"> Creat Employees </span> -->
+            <!-- <span class="space"></span> -->
+        <!-- </div> -->
+        <div class="list" (click)="logout()">
+            <span class="material-icons"> logout </span>
+            <span class="list-name"> Logout </span>
+            <!-- <span class="space"></span> -->
+        </div>
+    </div>
+
+    <!-- Middle -->
+    <div class="uploadList">
+        <ng-container *ngComponentOutlet = "componentSwitcher"></ng-container>
+    </div>
+
+    <!-- Right Side -->
+    <div class="profileEditor" *ngIf="currentUser">
+        <!-- Profile Image -->
+        <div class="name"> 
+            <div class="profile">Profile</div> 
+            <div class="settingsIcon"> <span class="material-icons"> manage_accounts </span> </div>
+            <div class="accountImg">
+                <div class="imgKl"> <!--This Div is made so to easily reshape the img containing Div-->
+                    <img [src]="currentUser.imageUrl" alt="Proflie Picture">
+                </div>
+            </div>
+        </div>
+        <!-- Profile Picture -->
+        <div class="profileImg">
+            <img [src]="currentUser.imageUrl" alt="Proflie Picture">
+        </div>
+
+        <!-- Static Data. -->
+        <div class="adminName"> {{currentUser.firstName}}   {{currentUser.lastName}}</div>
+        <div class="role">  {{currentUser.profession}} </div>
+        <div class="location">
+            <span class="material-icons"> place </span>
+            <span class="location-name">  {{currentUser.location}} -  {{currentUser.country}} </span>
+        </div>
+
+        <!-- Notifications -->
+        <div class="notifications">
+            <div class="notifContainer">
+                <div class="notif">Notifications</div>
+                <div class="notificationsIcon"> <span class="material-icons"> notifications_active </span> </div>
+            </div>
+
+            <!-- 
+            -- The notification list conatin a Main DIV Named NotificationsList
+            -- Within wich u have 3 main divs.
+            -- One to the left having the image
+            -- One in the middle devided into three parts
+            --* One on top and two at the bottom
+            -- One to the right having the date.
+            -->
+            <div class="notificationsListContainer">
+                <div class="col-md-12 notificationsList" *ngFor="let machin of machine">
+                    <div class="notifImg">
+                        <img [src]="machin.logoUrl" alt="Logo Picture">
+                    </div>
+                    <div class="detailInfo">
+                        <div class="notifName"> {{machin.createBy}} </div>
+                        <div class="detailInfoBottomContainer">
+                            <div class="infoRole"> {{machin.profession}} </div>
+                            <!-- <div class="date"> {{machin.addedDate.toDate() | date: 'dd/MM/yyyy HH:mm:ss'}} </div> -->
+                        </div>
+                    </div>
+                    <div class="infoTime"> {{machin.addedDate.toDate() | date: 'dd/MM/yyyy HH:mm:ss'}} </div>
+                </div>
+
+            </div>
+        </div> <!-- Will contain other divs to be added later-->
+    </div>
+</div>

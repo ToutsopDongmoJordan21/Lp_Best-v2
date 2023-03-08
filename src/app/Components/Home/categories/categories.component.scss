@@ -1,0 +1,97 @@
+@media screen and (min-width: 1025px){
+    // Globale Variables
+    $backgroundColor: #444;
+    $border: 1px solid blue;
+    $font-weight: Bold;
+    $font-family: Sacramento;
+
+    // Sass
+    @mixin display($align-item: center, $justify-content: center, $direction: row, $width: 100%, $height: 100vh) {
+        display: flex;
+        flex-direction: $direction;
+        align-items: $align-item;
+        justify-content: $justify-content;
+
+        width: $width;
+        height: $height;
+    }
+
+    // Start.
+    /*---------------------------------------------------------------------------------------------*/
+    /*
+    * This portion contains both a Publicity panel and a MainContent panel 
+    * Both of them found within a MainDivision
+    */  
+
+    .mainDivision {
+        @include display($justify-content: start, $width: 80vw, $height: 82vh, $direction: column);
+        // border: 1px solid rgb(38, 177, 96);
+
+        // This container hold was included to ease the management of the scroll effect
+        .containerHold {
+            @include display($width: 80vw, $height: 190vh, $direction: column);
+            // border: 1px solid blue;
+
+            .publicityPanel {
+                @include display($width: 80vw, $height: 23vh, $direction: column);
+                background-color:  rgb(40, 141, 187);
+            }
+    
+            .mainContent {
+                @include display($width: 80vw, $height: 106vh, $direction: column);
+                // border: 1px solid red;
+
+                h1 {
+                    @include display($width: 80vw, $height: 20vh);
+                    border-bottom: 1px solid black;
+                    font-size: 2em;
+                    font-family: $font-family;
+                    // background-color: #eee;
+                }
+
+                .categoryLogo {
+                    @include display($width: 100%, $height: 10vh, $justify-content: space-between);
+                    margin-bottom: 2vh;
+                    // border: 1px solid red;
+
+                    .name {
+                        @include display($width: 15%, $height: 5vh);
+                        cursor: pointer;
+                        // border: 1px solid red;
+                        background-color: #ddd;
+                    }
+
+                    .name:hover {
+                        background-color: #444;
+                        color: #fff;
+                    }
+                }
+
+                .bottomPanel{
+                    @include display($width: 100vw, $height: 110vh);
+                    // border: 1px solid red;
+                    // height: 80vh;
+                }
+            }
+        }
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .containerHold::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .containerHold {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px){
+}
+@media screen and (min-width: 481px) and (max-width: 768px){
+}
+@media screen and (min-width: 321px) and (max-width: 480px) { 
+}
+@media only screen and (min-width: 0px) and (max-width: 320px){
+}

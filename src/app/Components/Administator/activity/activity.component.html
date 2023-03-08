@@ -1,0 +1,58 @@
+<div class="tableContainer">
+
+      <!-- Top Heading of the page -->
+      <div class="heading">
+        <!-- Name of Current Panel -->
+        <div class="name"> Activity </div>
+        <!-- Search bar to the right -->
+        <div class="filter" (click)="direct()">
+          <button type="button" class="btn btn-primary btn-edit"> <span class="material-icons"> filter_list </span> Filter </button>
+        </div>
+      </div>
+
+    <!-- 
+    -- Will have an Div containing img to the left, 
+    -- A mid div containing two equal divs, one above and the other bello for both Name and email
+    -- A centralised Div with role tittle at heart
+    -- Phone number
+    -- Number of times posted
+    -- Date of latest post
+    -->
+
+    <table>
+        <tr>
+          <th>Basic Info</th>
+          <th>Company Name</th>
+          <th>Phone Number</th>
+          <th>Create By</th>
+          <th>Date</th>
+        </tr>
+
+        <!-- Contains all listed elements -->
+        <div class="trContainer">
+            <tr *ngFor="let machin of machine" (click)="direct()">
+              <!-- Basic Informations -->
+              <td>
+                <!-- User's Photo -->
+                <div class="tableImg"> <img [src]="machin.pictureUrl" alt="Proflie Picture"> </div>
+                <!-- User's Name and Email -->
+                <div class="info">
+                  <div class="name"> {{machin.productBrand}} </div>
+                  <div class="email"> <s class="strike">{{machin.machinePrice}}</s>  {{machin.promoPrice}} </div>
+                </div>
+              </td>
+    
+              <!-- Company Role -->
+              <td>{{machin.shopName}} </td>
+    
+              <!-- Phone Number -->
+              <td> {{machin.number}} </td>
+    
+              <!-- Number of times Posted -->
+              <td>{{machin.createBy}} </td>
+              <!-- Date of Last Posting -->
+              <td> {{machin.addedDate.toDate() | date: 'dd/MM/yyyy à HH:mm'}} </td>
+            </tr>
+        </div>
+    </table>
+</div>

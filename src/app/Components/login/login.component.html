@@ -1,0 +1,44 @@
+<main>
+  <div class="img_container">
+    <img [src]="illustration" alt="">
+  </div>
+
+  <div>
+    <!-- Company Logo -->
+    <div class="logo_container">
+      <img [src]="lichtDN" alt="logo">
+    </div>
+
+    <form (ngSubmit)="login()" *ngIf="loginForm" [formGroup]="loginForm">
+      <div class="email_pass_container">
+        <!-- Email -->
+        <div class="email_container">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your email</mat-label>
+              <input type="email" matInput placeholder="pat@example.com" formControlName="email">
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>     
+        </div>
+
+        <!-- Password -->
+        <div class="password_container">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <!-- Button -->
+        <div class="button_container">
+            <button type="submit" class="btn button" [disabled]="loginForm.invalid">Continue</button>
+        </div>
+
+      </div>
+    </form>
+    <!-- End -->
+  </div>
+</main>

@@ -1,0 +1,81 @@
+<!-- Home Page -->
+<div class="mainContainer">
+    <!-- Top panel will have logo, searchBar and details -->
+    <div class="topPanel">
+        <!-- Name of Current Panel -->
+        <div class="name">
+            <img [src] = "lichtDN" alt="logo">
+        </div>
+        <!-- Search bar to the right -->
+        <div class="searchBar">
+            <div class="form-outline">
+                <input type="search" id="form1" placeholder="search" class="form-control" />
+            </div>
+            <button type="button" class="btn btn-primary btn-edit"> <span class="material-icons"> search </span> </button>
+        </div>
+
+        <!-- Notification -->
+        <div class="notif"><span class="material-icons"> notifications_active </span></div>
+    </div>
+
+    <!-- This panel holds both left and right panel under the header -->
+    <div class="underPanel">
+        <!-- Has element to navigate throught content -->
+        <div class="leftPanel">
+            <div class="list" (click)= "onCLick('categories')">
+                <div class="minDesign">
+                    <div class="imgContainer">
+                        <img [src] ="categoriesLogo" alt="">
+                    </div>
+                    <span class="list-name"> Categories </span>
+                </div>
+                <span class="space"></span>
+            </div>
+
+            <div class="list" (click)= "onCLick('apple')">
+                <div class="minDesign">
+                    <div class="imgContainer">
+                        <img [src] ="AppleLogo" alt="">
+                    </div>
+                    <span class="list-name"> Apple </span>
+                </div>
+                <span class="space"></span>
+            </div>
+
+            <div class="list" (click)= "onCLick('hp')">
+                <div class="minDesign">
+                    <div class="imgContainer">
+                        <img [src] ="hpLogo" alt="">
+                    </div>
+                    <span class="list-name"> HP </span>
+                </div>
+                <span class="space"></span>
+            </div>
+
+            <div class="list" (click)= "onCLick('dell')">
+                <div class="minDesign">
+                    <div class="imgContainer">
+                        <img [src] ="dellLogo" alt="">
+                    </div>
+                    <span class="list-name"> Dell </span>
+                </div>
+                <span class="space"></span>
+            </div>
+
+            <div class="list" (click)= "onCLick('lenovo')">
+                <div class="minDesign">
+                    <div class="imgContainer">
+                        <img [src] ="lenovoLogo" alt="">
+                    </div>
+                    <span class="list-name"> Lenovo </span>
+                </div>
+                <span class="space"></span>
+            </div>
+        </div>
+
+        <!-- Right Panel elements -->
+        <div class="rightPanel">
+            <ng-container *ngComponentOutlet = "componentSwitcher"></ng-container>
+        </div>
+    </div>
+</div>

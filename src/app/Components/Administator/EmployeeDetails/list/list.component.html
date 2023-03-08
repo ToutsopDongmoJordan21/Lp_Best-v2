@@ -1,0 +1,39 @@
+<div class="listTableContainer">
+    <table>
+        <tr>
+          <th>Basic Info</th>
+          <th>Profession</th>
+          <th>Phone Number</th>
+          <th>Location & country</th>
+          <th>Date</th>
+        </tr>
+
+        <!-- Contains all listed elements -->
+        <div class="trContainer">
+            <tr *ngFor="let user of user">
+              <!-- Basic Informations -->
+              <td>
+                <!-- User's Photo -->
+                <div class="tableImg"> <img [src]="user.imageUrl" alt="Proflie Picture"> </div>
+                <!-- User's Name and Email -->
+                <div class="info">
+                  <div class="name"> {{user.username}} </div>
+                  <div class="email"> {{user.email}} </div>
+                </div>
+              </td>
+    
+              <!-- Company Role -->
+              <td> {{user.profession}} </td>
+    
+              <!-- Phone Number -->
+              <td> {{user.number}} </td>
+    
+              <!-- Number of times Posted -->
+              <td> {{user.location}} | {{user.country}} </td>
+              <!-- Date of Last Posting -->
+              <td> {{user.date.toDate() | date: 'dd/MM/yyyy HH:mm:ss'}} </td>
+            </tr>
+
+        </div>
+    </table>
+</div>

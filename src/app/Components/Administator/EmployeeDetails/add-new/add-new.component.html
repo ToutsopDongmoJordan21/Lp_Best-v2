@@ -1,0 +1,103 @@
+<div class="addNew">
+    <div class="photoContainer">
+        <img src="{{fb}}" alt="User Picture"
+            style="max-width: 100px;">
+
+        <input type="file" name="client-img" id="file" class="form-control" #userPhoto
+              (change)="onFileSelected($event)" accept="image/*" autocomplete="off">
+    </div>
+
+    <form (ngSubmit)="onSubmit()" *ngIf="signUpForm" [formGroup]="signUpForm">
+
+        <div class="addNewContainer">
+            <div class="firstlineContainer">
+                <!-- User Name used in DB -->
+                <div class="userName">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label> User Name </mat-label>
+                        <input matInput placeholder="Ex. Pizza" value="@MB" [formControl]="usernameControl">
+                    </mat-form-field>
+                </div>
+
+                <!-- Role -->
+                <div class="role">
+                    <mat-form-field appearance="fill">
+                        <mat-label> Role </mat-label>
+                        <mat-select formControlName="role">
+                            <mat-option *ngFor="let rol of role" [value]="rol"> {{rol.name}} </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <!-- Location -->
+                <div class="location">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label> Location </mat-label>
+                        <input matInput placeholder="Ex. Douala" value="Yaounde" [formControl]="locationControl">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="secondLineContainer">
+                <!-- First Name of User -->
+                <div class="firstName">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label> First Name </mat-label>
+                        <input matInput placeholder="Ex. Pizza" value="Marcus" [formControl]="firstNameControl">
+                    </mat-form-field>
+                </div>
+
+                <!-- Last Name of User -->
+                <div class="lastName">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label> Phone Number </mat-label>
+                        <input matInput placeholder="Ex. +237 699028439" value="Bale" type="number" [formControl]="numberControl" >
+                    </mat-form-field>
+                </div>
+
+                <!-- Profession -->
+                <div class="userName">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label> Profession </mat-label>
+                        <input matInput placeholder="Ex. Network Engeneer" value="Software Engeneer" [formControl]="professionControl">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="lastlineContainer">
+                <div class="email">
+                    <!-- Email -->
+                    <div class="email_container">
+                        <mat-form-field appearance="fill">
+                        <mat-label> Enter your email </mat-label>
+                        <input type="email" matInput placeholder="pat@example.com" [formControl]="emailControl">
+                        </mat-form-field>     
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="password">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="passwordControl">
+                    </mat-form-field>
+                </div>
+
+                <!-- Country -->
+                <div class="userName">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label> Country </mat-label>
+                        <input matInput placeholder="Ex. Nigeria" value="Cameroon" [formControl]="countryControl">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <!-- Validation -->
+        <div class="confirm">
+            <button type="submit" class="btn btn-primary btn-edit1" [disabled]="!signUpForm.valid"> 
+                <span class="material-icons"> check </span> Create 
+            </button>
+        </div>
+    </form>
+</div>

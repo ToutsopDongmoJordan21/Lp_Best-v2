@@ -1,0 +1,203 @@
+<div class="uploadList">
+    <!-- Top Heading of the page -->
+    <div class="heading">
+        <!-- Name of Current Panel -->
+        <div class="name"> Dashboard </div>
+        <!-- Search bar to the right -->
+        <div class="searchBar">
+            <div class="input-group">
+                <div class="form-outline">
+                    <input type="search" id="form1" placeholder="search" class="form-control" />
+                </div>
+                <button type="button" class="btn btn-primary btn-edit"> <span class="material-icons"> search </span> </button>
+            </div>
+        </div>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" *ngIf="machineForm" [formGroup]="machineForm" class="normal-form">
+
+        <!-- Upload Excel file - Drag and drop -->
+        <div class="uploadExcelFile">
+            <div class="photoContainer">
+                <div class="userPhoto">
+                    <img src="{{fb}}" alt="Picture of Machine" style="max-width: 100px;">
+                    <input type="file" name="article Image" id="file" class="form-control" #articlePhoto
+                (change)="onFileSelected($event)" accept="image/*" autocomplete="off">
+                </div>
+
+                <div class="userPhoto">
+                    <img src="{{fc}}" alt="Logo Picture" style="max-width: 100px;">
+                    <input type="file" name="article Image" id="file" class="form-control" #logoPhoto
+                (change)="onFileSelectedx($event)" accept="image/*" autocomplete="off">
+                </div>
+            </div>
+        
+            <div class="addNewContainer">
+                <div class="firstlineContainer">
+                    <!-- Prod Name used in DB -->
+                    <div class="userName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Online Shop </mat-label>
+                            <input matInput placeholder="Ex. Glotheho" [formControl]="shopNameControl">
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Link to the online store -->
+                    <div class="userName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Shop Link </mat-label>
+                            <input matInput placeholder="Ex. https://Glotheho.com" [formControl]="shopLinkControl">
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div>
+
+
+                    <!-- Screen Sixe -->
+                    <div class="firstName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Price </mat-label>
+                            <input matInput placeholder="Ex. XAF 400,000" [formControl]="machinePriceControl">
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Screen Sixe -->
+                    <div class="firstName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Promo Price </mat-label>
+                            <input matInput placeholder="Ex. XAF 390,000" [formControl]="promoPriceControl">
+                        </mat-form-field>
+                    </div>
+                </div>
+        
+                <div class="secondLineContainer">  
+                    <!-- CPU Model -->
+                    <div class="lastName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> CPU Model </mat-label>
+                            <input matInput placeholder="Ex. 7th Gen Core i3 (16MB Cache, 4GHZ, 8Cores)" [formControl]="cpuModelControl">
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- CPU Speed -->
+                    <div class="firstName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> CPU Speed </mat-label>
+                            <input matInput placeholder="Ex. 2.3 GHZ" [formControl]="cpuSpeedControl">
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div> 
+                    
+                    <!-- HDD Memory -->
+                    <div class="firstName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> HD Size </mat-label>
+                            <input matInput placeholder="Ex. 1TB" [formControl]="hdSizeControl">
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div>  
+
+                    <!-- RAM Chip -->
+                    <div class="firstName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Memory Size / Type </mat-label>
+                            <input matInput placeholder="Ex. 16GM / DDR4" [formControl]="RAMSizeControl">
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="thirdContainer"> 
+                    <!-- Graphic Processor -->
+                    <div class="lastName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Graphic Processor </mat-label>
+                            <input matInput placeholder="Ex. NVIDIA GeForce RTX 3060 with 6GB GDDR6" [formControl]="graphicProcessorControl">
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Refresh Rate -->
+                    <div class="firstName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Resfresh Rate </mat-label>
+                            <input matInput placeholder="Ex. 90GHz" [formControl]="refreshRateControl">
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Screen Size -->
+                    <div class="firstName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Screen Size </mat-label>
+                            <input matInput placeholder="Ex. 16 Inches" [formControl]="screenSizeControl">
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Display Technology -->
+                    <div class="firstName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Display Technology </mat-label>
+                            <input matInput placeholder="Ex. OLED" [formControl]="displayTechnologyControl">
+                        </mat-form-field>
+                    </div>
+                </div>
+        
+                <div class="lastlineContainer">
+                    <!-- Prod Brand -->
+                    <div class="userName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Product Brand </mat-label>
+                            <input matInput placeholder="Ex. Dell" [formControl]="productBrandControl">
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Prod Series -->
+                    <div class="userName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Model Series </mat-label>
+                            <input matInput placeholder="Ex. Dell G15 5510" [formControl]="modelSeriesControl" >
+                            <mat-error>This field is mandatory</mat-error>
+                        </mat-form-field>
+                    </div>       
+                    
+                    <!-- Number of USB Ports -->
+                    <div class="firstName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> USB Ports </mat-label>
+                            <input matInput placeholder="Ex. USB type C Ports" [formControl]="usbPortsControl">
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Wireless Type -->
+                    <div class="firstName">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label> Wireless Connectivity </mat-label>
+                            <input matInput placeholder="Ex. Bluetooth - Wifi" [formControl]="wifiConnectivityControl">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Validation -->
+            <div class="confirm">
+                    <!-- Button to reset back parameters to default -->
+                    <button type="submit" class="btn btn-primary btn-edit1" (click) = "onClear()" [disabled]="machineForm.invalid"> 
+                        <span class="material-icons"> backspace </span> Clear 
+                    </button>
+
+                    <!-- Button to validate the form -->
+                    <button type="submit" class="btn btn-primary btn-edit1" [disabled]="machineForm.invalid"> 
+                        <span class="material-icons"> check </span> Create 
+                    </button>
+            </div>
+        </div>
+
+    </form>
+
+    <!-- List of latest uploads could go here if needed. -->  
+</div>

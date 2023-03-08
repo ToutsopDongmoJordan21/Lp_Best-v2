@@ -1,0 +1,162 @@
+<!-- This division element contains every other element -->
+<div class="mainContainer">
+    <!-- There is a top most block element that serves to close the whole panel -->
+    <div class="closeTag"><span class="material-icons"> highlight_off </span> </div>
+
+    <!-- Bellow the closing panel holding the xticks panel -->
+    <div class="xticsContainer">
+        <!-- Place an Image on the left side of the screen. -->
+        <div class="leftPanel">
+            <div class="header"> Core details </div>
+
+            <div class="imgContainer">
+                <div class="img">
+                    <img [src]="data.pictureUrl" alt="Proflie Picture">
+                </div>
+            </div>
+        <!--=--------------------------------------------------------------------------=-->
+            <!-- Details found Under Img -->
+            <div class="details">
+                <div class="modelName">{{data.modelSeries}}</div>
+                <div class="date"> Mise a jour le <!-- {{data.addedDate.toDate() | date: 'dd/MM/yyyy HH:mm:ss'}} --> </div>
+               
+                <div class="cpu">
+                    <div class="name">CPU Model</div>
+                    <div class="nameDetails">{{data.cpuModel}}</div>
+                </div>
+
+                <div class="cpu">
+                    <div class="name">RAM</div>
+                    <div class="nameDetails">{{data.RAMSize}}</div>
+                </div>
+
+                <div class="cpu">
+                    <div class="name">CPU Speed</div>
+                    <div class="nameDetails">{{data.cpuSpeed}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle panel holds the machines detailed characteristics -->
+        <div class="middlePanel">
+            <div class="header"> Core details </div>
+        <!--=--------------------------------------------------------------------------=-->
+            <!-- Details found Under Img -->
+            <div class="details">
+                <div class="cpu">
+                    <div class="name">Display Technology</div>
+                    <div class="nameDetails">{{data.displayTechnology}}</div>
+                </div>
+
+                <div class="cpu">
+                    <div class="name">Graphic Processor</div>
+                    <div class="nameDetails">{{data.graphicProcessor}}</div>
+                </div>
+
+                <div class="cpu">
+                    <div class="name">Hd Size</div>
+                    <div class="nameDetails">{{data.hdSize}}</div>
+                </div>
+            </div>
+
+        <!--=--------------------------------------------------------------------------=-->
+            <div class="details">
+                <div class="cpu">
+                    <div class="name">Model of Series</div>
+                    <div class="nameDetails">{{data.modelSeries}}</div>
+                </div>
+
+                <div class="cpu">
+                    <div class="name">Product Brand</div>
+                    <div class="nameDetails">{{data.productBrand}}</div>
+                </div>
+
+                <div class="cpu">
+                    <div class="name">Refresh Rate</div>
+                    <div class="nameDetails">{{data.refreshRate}}</div>
+                </div>
+            </div>
+        <!--=--------------------------------------------------------------------------=-->
+            <div class="details">
+                <div class="cpu">
+                    <div class="name">Screen Size</div>
+                    <div class="nameDetails">{{data.screenSize}}</div>
+                </div>
+
+                <div class="cpu">
+                    <div class="name">USB Ports No</div>
+                    <div class="nameDetails">{{data.usbPorts}}</div>
+                </div>
+
+                <div class="cpu">
+                    <div class="name">Wifi Connectivity</div>
+                    <div class="nameDetails">{{data.wifiConnectivity}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel holds the shops and prices to compare -->
+        <div class="rightPanel">
+            <div class="header"> Online Shops </div>
+            <!-- Details found Under Img -->
+            <!-- Section 1 -->
+            <div class="details">
+
+                <div class="cpu">
+                    <div class="cpuCont">
+                        <div class="imgCont">
+                            <img [src]="data.logoUrl" alt="Proflie Picture">
+                        </div>
+    
+                        <div class="shop">
+                            <div class="name">{{data.shopName}}</div>
+                            <!-- <div class="nameDetails">1 Available</div> -->
+                        </div>
+    
+                        <div class="price">
+                            <div class="name"> {{data.machinePrice}}</div>
+                            <div class="nameDetails">{{data.promoPrice}}</div>
+                        </div>
+                    </div>
+
+                    <!-- Buy Button -->
+                    <a href="#" class="anchor">
+                        <button type="button" class="btn btn-primary btn-edit1"> Shop </button>
+                    </a>
+                </div>
+
+                <div class="cpu">
+                    <div class="cpuCont" *ngFor="let machin of machine">
+                        <div class="imgCont">
+                            <img [src]="machin.logoUrl" alt="Proflie Picture">
+                        </div>
+    
+                        <div class="shop">
+                            <div class="name">{{machin.shopName}}</div>
+                            <!-- <div class="nameDetails">1 Available</div> -->
+                        </div>
+    
+                        <div class="price">
+                            <div class="name"> {{machin.machinePrice}} CFA</div>
+                            <div class="nameDetails">{{machin.promoPrice}} CFA</div>
+                        </div>
+                    </div>
+
+                    <!-- Buy Button -->
+                    <a href="#" class="anchor">
+                        <button type="button" class="btn btn-primary btn-edit1"> Shop </button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Company Details about the product -->
+            <div class="comDetails">
+                <a href="#" class="whatsAppButton">
+                    <div class="imgCont">
+                        <img [src] ="whatapplogo" alt=""> Contact Us
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
